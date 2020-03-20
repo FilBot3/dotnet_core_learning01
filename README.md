@@ -12,6 +12,14 @@ faster on Linux. Surprisingly easy to get started with the `dotnet` command.
 
 ## Setup
 
+Add a NuGet Package source to dotnet
+
+```bash
+dotnet nuget add source --name nuget.org https://api.nuget.org/v3/index.json
+```
+
+This may require having `nuget` in your `PATH`.
+
 Create a Project
 
 ```bash
