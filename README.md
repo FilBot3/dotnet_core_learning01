@@ -62,7 +62,33 @@ dotnet publish --runtime linux-x64 --configuration Release
 
 ## Development and Testing
 
-TODO
+To perform linting, this can be done by using a tool called `StyleCop.Analyzers`.
+Install StyleCop.Analyzers to each project you wish to have it run against.
+
+```bash
+dotnet add ${CSHARP_PROJECT}.csproj package StyleCop.Analyzers
+```
+
+Then perform a build to get all the style warnings. While the build might succeed,
+it doesn't mean that you're code is stylistically appropriate. This is helpful for
+performing CI/CD functionality.
+
+Another tool that can be used in a CI/CD environment is the `dotnet tool` called
+`dotnet-format`. Install the tools like this:
+
+```bash
+dotnet tool install --global dotnet-format
+```
+
+Then call the program like:
+
+```bash
+dotnet format --workspace example.sln --verbosity diag
+```
+
+### Branching Strategies
+
+Follow GitFlow when performing development on this repository. That way changes can be tracked.
 
 ## References
 
